@@ -1,0 +1,30 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.7.0",
+    "firebase": "^11.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-particles": "^2.3.3",
+    "react-router-dom": "^6.4.2",
+    "react-simple-typewriter": "^5.0.1",
+    "sass": "^1.55.0",
+    "TagCloud": "^2.3.2",
+    "tsparticles": "^2.3.4",
+    "tsparticles-engine": "^2.3.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.1.0",
+    "vite": "^3.1.0"
+  }
+}
