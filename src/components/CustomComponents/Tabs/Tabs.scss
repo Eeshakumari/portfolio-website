@@ -1,0 +1,186 @@
+.tabs {
+  position: relative;
+  &::before {
+    content: " ";
+    grid-area: 1 / 1 / 2 / 2;
+    display: table;
+  }
+
+  .tabs__menu {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    padding: 9px 0;
+
+    .tab__inline__block {
+      max-width: 100%;
+      display: inline-block;
+    }
+    .tab__tab__link {
+      vertical-align: top;
+      text-align: left;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+    }
+    .tab__link__portfolio {
+      color: var(--secondary-color);
+      background-color: rgba(0, 0, 0, 0);
+      padding-left: 0;
+      transition: all 0.3s;
+    }
+    .selected {
+      color: var(--secondary-bg-color);
+    }
+  }
+
+  .tabs__content {
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    &::after,
+    &::before {
+      content: " ";
+      grid-area: 1 / 1 / 2 / 2;
+      display: table;
+    }
+    &::after {
+      clear: both;
+    }
+
+    .tab__pane {
+      display: none;
+      position: relative;
+    }
+    .tab__pane.active {
+      display: block;
+    }
+    .home__portfolio__collection__list {
+      column-count: 2;
+      column-gap: 30px;
+      margin-top: 10px;
+    }
+    .home__portfolio__collection__item {
+      display: block;
+    }
+    .home__portfolio__item {
+      margin-bottom: 30px;
+      display: inline-block;
+      position: relative;
+      width: 100%;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .home__portfolio__image {
+      max-width: 100%;
+      vertical-align: middle;
+      display: inline-block;
+      width: 100%;
+      min-height: 10rem;
+      max-height: 30rem;
+
+      position: relative;
+      overflow: hidden;
+      background-color: rgba(#fff, 0.8);
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background-image: linear-gradient(
+          90deg,
+          rgba(#fff, 0) 0,
+          rgba(#fff, 0.2) 20%,
+          rgba(#fff, 0.5) 60%,
+          rgba(#fff, 0)
+        );
+        animation: shimmer 2s infinite;
+        content: "";
+      }
+      @keyframes shimmer {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+    }
+    .home__portfolio__item__hover__overlay,
+    .hobbies__portfolio__item__hover__overlay {
+      opacity: 0;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      transition: opacity 0.2s;
+      display: flex;
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .hobbies__portfolio__item__hover__overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      .home__portfolio__name {
+        color: var(--primary-color);
+      }
+    }
+    .home__portfolio__name {
+      color: var(--bg-color);
+      font-size: var(--Primary-fontSize);
+      font-weight: 700;
+      font-family: Roboto, sans-serif;
+      line-height: 1.2em;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .home__portfolio__category {
+      color: var(--secondary-color);
+      font-size: 16px;
+      line-height: 1.6em;
+    }
+
+    .hobbies__portfolio__collection__list {
+      column-count: 3;
+      column-gap: 30px;
+      margin-top: 10px;
+    }
+  }
+}
+
+.loader__container {
+  width: 100%;
+  height: 36rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 991px) {
+  .home__portfolio__collection__list,
+  .hobbies__portfolio__collection__list {
+    column-count: 1 !important;
+  }
+  .home__portfolio__item__hover__overlay,
+  .hobbies__portfolio__item__hover__overlay {
+    opacity: 1 !important;
+  }
+  .home__portfolio__item {
+    width: 100%;
+  }
+  .loader__container {
+    height: 26rem !important;
+  }
+}
