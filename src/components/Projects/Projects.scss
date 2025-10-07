@@ -1,0 +1,21 @@
+.projects__main__container {
+  padding-top: 50px;
+  padding-bottom: 70px;
+
+  .projects__title {
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2em;
+  }
+  .home__project__tabs {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .projects__title {
+    font-size: 2.5rem !important;
+  }
+}

@@ -31,7 +31,7 @@ const Home = () => {
   const [width, setWidth] = useState(window.innerWidth);
 
   const calculateAge = () => {
-    var age = DateFrom("04/15/1999");
+    var age = DateFrom("08/03/2002");
     setAge(age.years);
   };
 
