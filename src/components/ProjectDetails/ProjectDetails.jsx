@@ -13,9 +13,7 @@ const ProjectDetails = () => {
   const [techUsed, setTechUsed] = useState([]);
 
   useEffect(() => {
-    const selectedProject = allProjects.filter(
-      (project) => project.id === id
-    )[0];
+    const selectedProject = allProjects.filter(project => project.id === id)[0];
     setProject(selectedProject);
     setTechUsed(selectedProject.tech);
     return () => {};
@@ -77,7 +75,7 @@ const ProjectDetails = () => {
               <div className="project__template__info__wrap">
                 <p className="subtitle__projects">Packages used</p>
                 <div className="tech__wrapper">
-                  {project.packages?.map((item) => (
+                  {project.packages?.map(item => (
                     <p
                       key={item + project.id}
                       className="paragraph__gray not__captialize"
@@ -89,31 +87,35 @@ const ProjectDetails = () => {
               </div>
             </div>
           </div>
-          <div className="project__page__divider" />
 
-          <div>
-            <h2 className="subtitle__projects__tech">Tech</h2>
-            <div className="project__page__skills__wrapper">
-              {techUsed?.map((tech) => (
-                <div
-                  key={tech.name + tech.icon}
-                  className="project__page__tech__item"
-                >
-                  <img
-                    src={tech.icon}
-                    className={`home__page__skills__imgage__item ${
-                      tech.name === "Flutter/Dart" ||
-                      tech.name === "Material UI"
-                        ? "special__width"
-                        : ""
-                    }`}
-                    alt={tech.name}
-                  />
-                  <div className="home__page__tech__name">{tech.name}</div>
+          {techUsed && (
+            <>
+              <div className="project__page__divider" />
+              <div>
+                <h2 className="subtitle__projects__tech">Tech</h2>
+                <div className="project__page__skills__wrapper">
+                  {techUsed?.map(tech => (
+                    <div
+                      key={tech.name + tech.icon}
+                      className="project__page__tech__item"
+                    >
+                      <img
+                        src={tech.icon}
+                        className={`home__page__skills__imgage__item ${
+                          tech.name === "Flutter/Dart" ||
+                          tech.name === "Material UI"
+                            ? "special__width"
+                            : ""
+                        }`}
+                        alt={tech.name}
+                      />
+                      <div className="home__page__tech__name">{tech.name}</div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </MainBody>
