@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+#root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+:root {
+  --bg-color: #1c1e1f;
+  --secondary-bg-color: #d62222;
+
+  --primary-color: #fff;
+  --secondary-color: #8d8e8f;
+
+  --borderRadius: 4px;
+  --navBorderRadius: 12px;
+
+  --Primary-fontSize: 20px;
+  --secondary-fontSize: 15px;
+  --third-fontSize: 12px;
+
+  --name-fontSize: 48px;
+  --lineHeight: 1.5em;
+
+  --primary-fontWeight: 700;
+  --secondary-fontWeight: 400;
+}
+.app_wrapper {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  align-items: center;
+  background-color: #0f1414;
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+  overflow: hidden;
+}
+
+.button {
+  color: #fff;
+  line-height: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0;
+  padding: 9px 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+.website__button,
+.github__button {
+  color: var(--primary-color);
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: var(--secondary-bg-color);
+  border: 1px solid var(--secondary-bg-color);
+  padding: 10px 20px;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.website__button:hover {
+  background-color: var(--bg-color);
+  color: var(--primary-bg-color);
+}
+
+.github__button {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.github__button:hover {
+  background-color: var(--bg-color);
+  border: 1px solid var(--secondary-bg-color);
+  color: var(--primary-color);
+}
+
+.skeleton {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  overflow: hidden;
+  background-color: #dddbdd;
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+
+.skeleton::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(#fff, 0) 0,
+    rgba(#fff, 0.2) 20%,
+    rgba(#fff, 0.5) 60%,
+    rgba(#fff, 0)
+  );
+  animation: shimmer 2s infinite;
+  content: "";
+}
