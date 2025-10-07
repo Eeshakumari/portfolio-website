@@ -69,6 +69,6 @@ export const skills = [
 export const externalLinks = {
   linkedin: "https://www.linkedin.com/in/eesha-kumari-reddy-113878210",
   email: "reddyeeshakumari191@gmail.com",
-  github: "https://github.com/eeshakumari191",
+  github: "https://github.com/Eeshakumari",
   phoneNo: "+1 (475) 282-8863"
 };
