@@ -1,14 +1,14 @@
 export const educationDet = [
   {
     course: "Masters in Business Analytics",
-    duration: "2016 - 2020",
+    duration: "2023 - 2024",
     location: "USA",
     specialization: "Business Analytics",
     schoolName: "University of New Haven",
   },
   {
     course: "Bachelors of Business Administration",
-    duration: "2014 - 2016",
+    duration: "2021 - 2023",
     location: "India",
     specialization: "",
     schoolName: "St Mary's College",
