@@ -34,18 +34,18 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     setMailLoading(true);
     emailjs
       .sendForm(
-        "Eesha-email",
-        "template_zgstu8p",
+        "service_8xwq5sw",
+        "template_tpq9tly",
         form.current,
-        "wEywtjo9HIaU5G7Ta"
+        "g2AF4lzYWcSzUwclP"
       )
       .then(
-        (result) => {
+        result => {
           setMailStatus({
             ...mailStatus,
             response: result.text,
@@ -53,7 +53,7 @@ const Contact = () => {
           setMailLoading(false);
           setFormDetails(initialValues);
         },
-        (error) => {
+        error => {
           setMailStatus({
             ...mailStatus,
             error: true,
@@ -76,12 +76,16 @@ const Contact = () => {
 
             <div className="detail__contact">
               <img src={Email} alt="icon" />
-              <a href={`mailto:${externalLinks.email}`}>{externalLinks.email}</a>
+              <a href={`mailto:${externalLinks.email}`}>
+                {externalLinks.email}
+              </a>
             </div>
 
             <div className="detail__contact">
               <img src={Phone} alt="icon" />
-              <a href={`tel:${externalLinks.phoneNo}`}>{externalLinks.phoneNo}</a>
+              <a href={`tel:${externalLinks.phoneNo}`}>
+                {externalLinks.phoneNo}
+              </a>
             </div>
           </div>
 
@@ -97,8 +101,10 @@ const Contact = () => {
             </div>
             {mailStatus.response === "OK" && (
               <div className="success__mail submission__done">
-                <p>Thank you for reaching out! I'll get back to you soon with a
-                response.</p>
+                <p>
+                  Thank you for reaching out! I'll get back to you soon with a
+                  response.
+                </p>
               </div>
             )}
             {mailStatus.error && (
@@ -118,14 +124,14 @@ const Contact = () => {
               <form
                 className="form__container"
                 ref={form}
-                onSubmit={(e) => handleSubmit(e)}
+                onSubmit={e => handleSubmit(e)}
               >
                 <Input
                   type="text"
                   name="name"
                   placeholder="Name"
                   value={formDetails.name}
-                  onChange={(value) => handleChange(value, "name")}
+                  onChange={value => handleChange(value, "name")}
                   required
                 />
                 <Input
@@ -133,7 +139,7 @@ const Contact = () => {
                   name="email"
                   placeholder="Email"
                   value={formDetails.email}
-                  onChange={(value) => handleChange(value, "email")}
+                  onChange={value => handleChange(value, "email")}
                   required
                 />
                 <Input
@@ -141,7 +147,7 @@ const Contact = () => {
                   name="message"
                   placeholder="Message"
                   value={formDetails.message}
-                  onChange={(value) => handleChange(value, "message")}
+                  onChange={value => handleChange(value, "message")}
                   required
                 />
                 <div className="submit__container">
